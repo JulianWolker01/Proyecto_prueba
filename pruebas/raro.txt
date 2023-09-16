@@ -1,2 +1,4 @@
 sqlcmd -S DESKTOP-H6CDQKL\SQLEXPRESS01 -d master -E -i "C:\Users\GOSTE\Desktop\Proyecto\Base de datos\basededatos.sql"
 sqlcmd -S DESKTOP-TVAQ0EC -d master -E -i "C:\Users\Fernando\Desktop\Proyecto\Base_de_datos\basededatos.sql"
+
+https://www.sysadmit.com/2019/02/sqlserver-como-saber-nombre-instancia.html
