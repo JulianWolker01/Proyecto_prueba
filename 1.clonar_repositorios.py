@@ -8,7 +8,7 @@ repos = [
     "https://github.com/JulianWolker01/base-de-datos.git"
 ]
 
-github_token = "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"
+github_token = "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"
 
 for repo_url in repos:
     # Extraer el nombre del repositorio de la URL
