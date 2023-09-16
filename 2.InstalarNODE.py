@@ -16,3 +16,6 @@ except subprocess.CalledProcessError:
 # Verificar la versión de Node.js
 node_version = subprocess.check_output(['node', '--version'], stderr=subprocess.STDOUT, text=True).strip()
 print("Versión de Node.js:", node_version)
+
+print("")
+input("Presione cualquier tecla")

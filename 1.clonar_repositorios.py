@@ -8,7 +8,7 @@ repos = [
     "https://github.com/JulianWolker01/base-de-datos.git"
 ]
 
-github_token = "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"
+github_token = "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"
 
 for repo_url in repos:
     # Extraer el nombre del repositorio de la URL
@@ -38,3 +38,6 @@ for repo_url in repos:
             print(f"Repositorio {repo_name} clonado exitosamente.")
     except subprocess.CalledProcessError as e:
         print(f"Error al actualizar/clonar el repositorio {repo_name}: {e}")
+
+print("")
+input("Presione cualquier tecla para finalizar")
