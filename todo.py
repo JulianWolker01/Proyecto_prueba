@@ -8,7 +8,6 @@ scripts = [
     "5.BasedeDatos.py",
     "6.configapp.py",
     "7.BackendYFrontend.py"
-
 ]
 
 for script in scripts:
