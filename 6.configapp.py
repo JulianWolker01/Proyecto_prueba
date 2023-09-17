@@ -1,6 +1,6 @@
 import fileinput
 
-server = "DESKTOP-TVAQ0EC\SQLEXPRESS01"
+server = "DESKTOP-TVAQ0EC\SQLEXPRESS"
 archivo_confi = "aplicacion-escritorio/PRUEAS/PRUEAS/DB_Querys.cs"
 
 nuevo_valor = f'Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=proyecto_academico;Data Source={server}'
