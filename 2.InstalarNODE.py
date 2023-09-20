@@ -1,21 +1,14 @@
 import subprocess
 
-# Verificar si Node.js está instalado
+# Comando de instalación de Node.js para Windows
+comando_instalacion = 'msiexec.exe /i https://nodejs.org/dist/v14.16.1/node-v14.16.1-x64.msi'
+
+# Ejecutar el comando de instalación
 try:
-    node_version = subprocess.check_output(['node', '--version'], stderr=subprocess.STDOUT, text=True)
-    print("Node.js está instalado. Versión:", node_version)
-except subprocess.CalledProcessError:
-    print("Node.js no está instalado. Instalando...")
-
-    # Instalar Node.js utilizando el administrador de paquetes nvm
-    install_node_command = 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash && source ~/.nvm/nvm.sh && nvm install node'
-    subprocess.run(install_node_command, shell=True, check=True)
-
-    print("Node.js instalado correctamente.")
-
-# Verificar la versión de Node.js
-node_version = subprocess.check_output(['node', '--version'], stderr=subprocess.STDOUT, text=True).strip()
-print("Versión de Node.js:", node_version)
+    subprocess.run(comando_instalacion, shell=True, check=True)
+    print("Node.js se ha instalado correctamente.")
+except subprocess.CalledProcessError as e:
+    print(f"Error al instalar Node.js: {e}")
 
 print("")
 input("Presione cualquier tecla")
