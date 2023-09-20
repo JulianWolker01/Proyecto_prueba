@@ -1,9 +1,11 @@
 import fileinput
 
-server = "DESKTOP-TVAQ0EC\SQLEXPRESS"
+server = "DESKTOP-H6CDQKL\SQLEXPRESS"
+reemplazado = server.replace("\\", "\\\\")
+
 archivo_confi = "aplicacion-escritorio/PRUEAS/PRUEAS/DB_Querys.cs"
 
-nuevo_valor = f'Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=proyecto_academico;Data Source={server}'
+nuevo_valor = f'Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=proyecto_academico;Data Source={reemplazado}'
 reemplazado = False
 
 with fileinput.FileInput(archivo_confi, inplace=True) as archivo:
