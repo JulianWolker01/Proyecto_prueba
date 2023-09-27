@@ -1,7 +1,7 @@
 import subprocess
 
 # Comando de instalación de Node.js para Windows
-comando_instalacion = 'msiexec.exe /i https://nodejs.org/dist/v14.16.1/node-v14.16.1-x64.msi'
+comando_instalacion = 'msiexec.exe /i https://nodejs.org/dist/v18.18.0/node-v18.18.0-x64.msi'
 
 # Ejecutar el comando de instalación
 try:
