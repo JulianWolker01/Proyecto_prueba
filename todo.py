@@ -1,8 +1,7 @@
 import subprocess
 
 scripts = [
-    "1.clonar_repositorios.py",
-    "2.InstalarNODE.py",
+    "2.clonar_repositorios.py",
     "3.dependencias.py",
     "4.SelectServer.py",
     "5.BasedeDatos.py",
