@@ -5,8 +5,7 @@ scripts = [
     "3.dependencias.py",
     "4.SelectServer.py",
     "5.BasedeDatos.py",
-    "6.configapp.py",
-    "7.BackendYFrontend.py"
+    "6.BackendYFrontend.py"
 ]
 
 for script in scripts:
