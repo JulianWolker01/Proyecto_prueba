@@ -3,30 +3,28 @@ import re
 import subprocess
 
 directorio = 'base-de-datos'
-archivos = os.listdir(directorio)
 
-nombre_max = None
-numero_max = -1
+archivos = os.listdir(directorio)
+nombre_mas_actual = None
+fecha_mas_actual = "0000-00-00"
 
 for archivo in archivos:
-    # Comprobar si el archivo tiene la extensión ".sql"
-    if archivo.endswith('.sql'):
-        # Utilizar una expresión regular para extraer el número del nombre del archivo
-        match = re.search(r'(\d+)\.sql$', archivo)
-        if match:
-            numero = int(match.group(1))
-            if numero > numero_max:
-                numero_max = numero
-                nombre_max = archivo
+    if archivo.endswith('.sql') and archivo.startswith('sql_'):
 
-if nombre_max:
-    print("El archivo mas actual es: ", nombre_max)
+        fecha_str = archivo.replace('sql_', '').split('.')[0]
+        
+        if fecha_str > fecha_mas_actual:
+            fecha_mas_actual = fecha_str
+            nombre_mas_actual = archivo
+
+if nombre_mas_actual:
+    print("El archivo más actual es:", nombre_mas_actual)
 else:
-    print("No se encontraron archivos con números al final.")
+    print("No se encontraron archivos con el formato esperado en el nombre.")
 
-archivo_sql = os.path.abspath(os.path.join(directorio, nombre_max))
+archivo_sql = os.path.abspath(os.path.join(directorio, nombre_mas_actual))
 
-server_name = "DESKTOP-TVAQ0EC\SQLEXPRESS01"
+server_name = "DESKTOP-H6CDQKL\SQLEXPRESS01"
 
 def ExistenciaBD(server_name):
     try:

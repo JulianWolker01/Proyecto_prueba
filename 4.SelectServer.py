@@ -60,7 +60,7 @@ with fileinput.FileInput(ruta_archivo, inplace=True) as archivo:
         else:
             print(linea, end='')
 
-ruta_archivo2 = os.path.join(os.path.dirname(__file__), "6.configapp.py")
+ruta_archivo2 = os.path.join(os.path.dirname(__file__), "configapp.py")
 
 with fileinput.FileInput(ruta_archivo2, inplace=True) as archivo:
     for linea in archivo:
