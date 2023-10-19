@@ -1,5 +1,4 @@
 import os
-import re
 import subprocess
 
 directorio = 'base-de-datos'
