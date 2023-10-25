@@ -1,8 +1,5 @@
-Los requisitos para poder ejecutar los scripts son : Tener Python y Microsoft Sql Server
+Los requisitos para poder ejecutar el archivo son : Tener Python y Tener Microsoft Sql Server
 
-Se tienen que ejecutar los archivos en el orden numerico en el que estan colocados.
-el primer archivo hay que ejecutarlo con python, el resto se puede ejecutar solo realizando doble click
+Ejecutar el archivo llamado "Ejecutar" con python.
 
-Para abrirlo con python, en el archivo 1, hacer click derecho, y en donde dice "abrir con" seleccionar python
-
-no ejecutar configapp
+Esto se realizar haciendo click derecho en el archivo, y en la parte que dice "Abrir con" o "Open with", seleccionar python. 

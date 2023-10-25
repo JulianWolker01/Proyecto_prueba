@@ -50,7 +50,7 @@ if instancias_sql:
             print("Opción no válida. Debe ingresar un número válido.")
 
 # Resto del código para actualizar los archivos y otras operaciones
-ruta_archivo = os.path.join(os.path.dirname(__file__), "5.BasedeDatos.py")
+ruta_archivo = os.path.join(os.path.dirname(__file__), "BasedeDatos.py")
 nuevo_valor = instancia_elegida
 
 with fileinput.FileInput(ruta_archivo, inplace=True) as archivo:
@@ -60,7 +60,7 @@ with fileinput.FileInput(ruta_archivo, inplace=True) as archivo:
         else:
             print(linea, end='')
 
-ruta_archivo2 = os.path.join(os.path.dirname(__file__), "configapp.py")
+ruta_archivo2 = os.path.join(os.path.dirname(__file__), "ConfigApp.py")
 
 with fileinput.FileInput(ruta_archivo2, inplace=True) as archivo:
     for linea in archivo:
