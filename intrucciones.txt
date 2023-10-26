@@ -1,5 +1,6 @@
 Los requisitos para poder ejecutar el archivo son : Tener Python y Tener Microsoft Sql Server
 
-Ejecutar el archivo llamado "Ejecutar" con python.
-
+Para ejecutar la pagina, Ejecutar el archivo llamado "Ejecutar" con python.
 Esto se realizar haciendo click derecho en el archivo, y en la parte que dice "Abrir con" o "Open with", seleccionar python. 
+
+Para ejecutar la aplicacion de escritorio, dirigirse a la carpeta aplicacion-escritorio,  entrar a la carpeta PRUEAS, y ejecutar el archivo PRUEAS.sln con Visual Studios

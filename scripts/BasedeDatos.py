@@ -1,7 +1,7 @@
 import os
 import subprocess
 
-directorio = 'base-de-datos'
+directorio = './base-de-datos'
 
 archivos = os.listdir(directorio)
 nombre_mas_actual = None
@@ -23,7 +23,7 @@ else:
 
 archivo_sql = os.path.abspath(os.path.join(directorio, nombre_mas_actual))
 
-server_name = "DESKTOP-TVAQ0EC\SQLEXPRESS01"
+server_name = "DESKTOP-H6CDQKL\SQLEXPRESS"
 
 def ExistenciaBD(server_name):
     try:
