@@ -23,7 +23,7 @@ else:
 
 archivo_sql = os.path.abspath(os.path.join(directorio, nombre_mas_actual))
 
-server_name = "DESKTOP-TVAQ0EC\SQLEXPRESS01"
+server_name = "DESKTOP-TVAQ0EC\SQLEXPRESS"
 
 def ExistenciaBD(server_name):
     try:

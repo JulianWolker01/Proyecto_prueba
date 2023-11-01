@@ -1,9 +1,9 @@
 import subprocess
 
-ruta_backend = "backend/node_back"
+ruta_backend = "./backend/node_back"
 comando_backend = "node index.js"  
 
-ruta_frontend = "frontend/proyecto-academico"
+ruta_frontend = "./frontend/proyecto-academico"
 comando_frontend = "npm start"
 
 proceso_backend = subprocess.Popen(comando_backend, shell=True, cwd=ruta_backend)
