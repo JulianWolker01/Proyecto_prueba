@@ -16,7 +16,32 @@ try:
         if respuesta == 'no':
             input("Presione cualquier tecla para continuar...")
             exit()
-    
+    else :
+        proceso_backend = subprocess.Popen(comando, shell=True, cwd=ruta_backend, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        print("Instalando dependencias en el backend...")
+        stdout_backend, stderr_backend = proceso_backend.communicate()
+        if proceso_backend.returncode == 0:
+            print("Dependencias instaladas en el backend.")
+        else:
+            print("Error al instalar dependencias en el backend.")
+            print(f"Salida del backend:\n{stdout_backend.decode()}")
+        
+        proceso_frontend = subprocess.Popen(comando, shell=True, cwd=ruta_frontend, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        print("Instalando dependencias en el frontend...")
+        stdout_frontend, stderr_frontend = proceso_frontend.communicate()
+        if proceso_frontend.returncode == 0:
+            print("Dependencias instaladas en el frontend.")
+        else:
+            print("Error al instalar dependencias en el frontend.")
+            print(f"Salida del frontend:\n{stdout_frontend.decode()}")
+        
+        env_path = "backend\\node_back\\.env"
+        if not os.path.exists(env_path):
+            with open(env_path, "w") as file:
+                file.write('DATABASE_URL = "sqlserver://10.120.0.176:1433;initialCatalog=proyecto_academico;trustServerCertificate=true;user=123;Password=456"')
+        else:
+            print("El archivo .env ya existe")
+            
     if respuesta == 'si' or respuesta == 's':
 
         proceso_backend = subprocess.Popen(comando, shell=True, cwd=ruta_backend, stdout=subprocess.PIPE, stderr=subprocess.PIPE)

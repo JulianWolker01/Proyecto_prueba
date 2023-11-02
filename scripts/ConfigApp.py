@@ -1,6 +1,6 @@
 import fileinput
 
-server = "DESKTOP-TVAQ0EC\SQLEXPRESS"
+server = "DESKTOP-H6CDQKL\SQLEXPRESS01"
 reemplazado = server.replace("\\", "\\\\")
 
 archivo_confi = "aplicacion-escritorio/PRUEAS/PRUEAS/DB_Querys.cs"
