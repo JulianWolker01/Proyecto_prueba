@@ -1,27 +1,32 @@
 import socket
 import os
-import subprocess
 import psutil
+import re
 
-def install_psutil():
-    try:
-       
-        print("psutil ya está instalado.")
-    except ImportError:
-        
-        try:
-            subprocess.check_call(["pip", "install", "psutil"])
-            print("psutil ha sido instalado correctamente.")
-        except subprocess.CalledProcessError as e:
-            print(f"Error al instalar psutil: {e}")
+def obtener_ip_desde_archivo(nombre_variable, nombre_archivo):
+    with open(nombre_archivo, 'r') as archivo:
+        lineas = archivo.readlines()
 
-if __name__ == "__main__":
-    install_psutil()
+        for linea in lineas:
+            if nombre_variable in linea:
+                match = re.search(r'\b(?:[0-9]{1,3}\.){3}[0-9]{1,3}\b', linea)
+                if match:
+                    ip = match.group()
+                    return ip
+    return None
 
+nombre_variable = "URL_SERVIDOR"
+nombre_archivo = "frontend/proyecto-academico/client/.env"
+
+ip = obtener_ip_desde_archivo(nombre_variable, nombre_archivo)
+
+if ip is not None:
+    print(f"La dirección IP es: {ip}")
+else:
+    print(f"No se encontró la variable {nombre_variable} en el archivo {nombre_archivo}.")
 
 nombre_interfaz_ethernet = "Ethernet"
 
-# Obtener la dirección IP de la interfaz de Ethernet específica
 mi_ip = None
 for interfaz, direcciones in psutil.net_if_addrs().items():
     if interfaz == nombre_interfaz_ethernet:
@@ -39,7 +44,7 @@ directorios = ['.\\backend', '.\\frontend']
 
 for directorio in directorios:
     directorio_completo = os.path.join(os.getcwd(), directorio)
-    ip_actual = "10.120.2.114"
+    ip_actual = ip
     nueva_ip = mi_ip
 
     def reemplazar_ip_en_archivo(ruta_archivo):
