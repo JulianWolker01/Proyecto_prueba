@@ -1,8 +1,24 @@
 import socket
 import os
+import subprocess
 import psutil
 
-# Nombre de la interfaz de Ethernet que deseas obtener (puede variar según tu sistema)
+def install_psutil():
+    try:
+       
+        print("psutil ya está instalado.")
+    except ImportError:
+        
+        try:
+            subprocess.check_call(["pip", "install", "psutil"])
+            print("psutil ha sido instalado correctamente.")
+        except subprocess.CalledProcessError as e:
+            print(f"Error al instalar psutil: {e}")
+
+if __name__ == "__main__":
+    install_psutil()
+
+
 nombre_interfaz_ethernet = "Ethernet"
 
 # Obtener la dirección IP de la interfaz de Ethernet específica
@@ -19,7 +35,7 @@ if mi_ip:
 else:
     print(f"No se pudo encontrar la dirección IP de la interfaz de Ethernet {nombre_interfaz_ethernet}.")
 
-directorios = ['backend', 'frontend']
+directorios = ['.\\backend', '.\\frontend']
 
 for directorio in directorios:
     directorio_completo = os.path.join(os.getcwd(), directorio)

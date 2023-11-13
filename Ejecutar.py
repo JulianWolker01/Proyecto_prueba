@@ -7,6 +7,7 @@ archivos = [
     ("scripts/Dependencias.py", "Instala las dependencias para el proyecto. (Sin esto, la pagina web no funciona)"),
     ("scripts/Servidor.py", "Selecciona un servidor para la base de datos."),
     ("scripts/BasedeDatos.py", "Importa o actualiza la Base de Datos. (Si aun no seleccionaste el servidor, NO EJECUTAR)"),
+    ("scripts/ConfigApi.py", "Configura La API para poder utilizarla en tu maquina"),
     ("scripts/Backend_Frontend.py", "Abre la pagina. (Ejecuta el Backend y Frontend)")
 ]
 
