@@ -1,0 +1,21 @@
+import pkgutil
+import subprocess
+import sys
+
+def verificar_instalacion(nombre_libreria):
+    return nombre_libreria in (name for _, name, _ in pkgutil.iter_modules())
+
+def instalar_libreria(nombre_libreria):
+    print(f"{nombre_libreria} no está instalada. Instalando...")
+    try:
+        subprocess.run([sys.executable, "-m", "pip", "install", nombre_libreria], check=True)
+        print(f"{nombre_libreria} se ha instalado correctamente.")
+    except subprocess.CalledProcessError as e:
+        print(f"Error al instalar {nombre_libreria}: {e}")
+
+nombre_libreria = "psutil"
+
+if verificar_instalacion(nombre_libreria):
+    print(f"{nombre_libreria} está instalada.")
+else:
+    instalar_libreria(nombre_libreria)
